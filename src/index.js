@@ -16,6 +16,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+app.get("/", (_req, res) => {
+  res.send("Hello World!");
+});
+
 app.use("/api/customer", customerRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/print-agent", printAgentRoutes);
